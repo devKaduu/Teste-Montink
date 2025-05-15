@@ -2,6 +2,8 @@
 
 Projeto de página de produto desenvolvida com **Next.js 13+ (App Router)** e **Tailwind CSS**, seguindo boas práticas de componentização, acessibilidade, UX/UI, e persistência de estado via `localStorage`.
 
+- Site no AR [Teste Montink](https://teste-montink-e-commerce-sigma.vercel.app/)
+
 ---
 
 ## ✨ Funcionalidades
