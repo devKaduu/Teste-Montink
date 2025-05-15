@@ -5,8 +5,6 @@ export function usePersistedState<T>(key: string, initialValue: T, ttl = 15) {
   const [value, setValue] = useState<T>(initialValue);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
     const stored = getWithExpiry<T>(key);
     if (stored !== null) {
       setValue(stored);
@@ -14,7 +12,6 @@ export function usePersistedState<T>(key: string, initialValue: T, ttl = 15) {
   }, [key]);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
     setWithExpiry(key, value, ttl);
   }, [key, value, ttl]);
 
