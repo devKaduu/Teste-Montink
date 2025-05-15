@@ -7,7 +7,7 @@ export function ImageGallery({ images, onSelect, selectedImage }: ImageGalleryPr
       <div className="border border-gray-300">
         <Image src={selectedImage} alt="Produto" width={467} height={538} />
       </div>
-      <div className="flex flex-row gap-3 justify-center flex-wrap lg:flex-col lg:justify-start">
+      <div className="flex flex-row gap-3 justify-center flex-wrap lg:flex-col lg:justify-start items-center">
         {images.map((img, i) => (
           <Image
             key={i}
