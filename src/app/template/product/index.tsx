@@ -14,10 +14,11 @@ export function ProductTemplate() {
   const [selectedColor, setSelectedColor] = usePersistedState("selectedColor", product.variants.color[0]);
 
   return (
-    <section className="flex justify-center items-center h-screen">
-      <div className="flex justify-center items-center gap-24">
+    <section className="flex justify-center items-center min-h-screen px-4 py-10">
+      <div className="flex flex-col lg:flex-row items-center lg:items-center gap-10 lg:gap-24 w-full max-w-7xl">
         <ImageGallery images={product.images} selectedImage={mainImage} onSelect={setMainImage} />
-        <div className="border border-gray-300 py-18 px-10 w-[450px] ">
+
+        <div className="border border-gray-300 px-6 py-8 w-full max-w-md">
           <ProductDetails product={product} />
 
           <ShippingField />

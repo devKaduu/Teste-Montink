@@ -3,11 +3,11 @@ import { ImageGalleryProps } from "./props";
 
 export function ImageGallery({ images, onSelect, selectedImage }: ImageGalleryProps) {
   return (
-    <div className="flex gap-10">
+    <div className="flex gap-10 flex-col lg:flex-row ">
       <div className="border border-gray-300">
         <Image src={selectedImage} alt="Produto" width={467} height={538} />
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-row gap-3 justify-center flex-wrap lg:flex-col lg:justify-start">
         {images.map((img, i) => (
           <Image
             key={i}
