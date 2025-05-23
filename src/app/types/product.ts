@@ -4,8 +4,6 @@ export interface Product {
   shipping: string;
   description: string;
   images: string[];
-  options: string[];
-  values: string[];
   variants: {
     size: string[];
     color: string[];
