@@ -2,9 +2,8 @@ import { VariantSelectorProps } from "./props";
 
 export default function VariantSelector({ title, options, selected, onSelect, type = "text" }: VariantSelectorProps) {
   return (
-    <div className="mt-8">
-      <p className="text-sm font-medium text-zinc-700">{title}</p>
-
+    <div className={`${options.length > 0 ? "mt-8" : ""}`}>
+      {options.length > 0 && <p className="text-sm font-medium text-zinc-700">{title}</p>}
       <div className="flex gap-2 items-center mt-3">
         {options.map((option, i) => (
           <button

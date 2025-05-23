@@ -1,4 +1,5 @@
 export interface Product {
+  slug: string;
   title: string;
   price: number;
   shipping: string;
@@ -6,6 +7,13 @@ export interface Product {
   images: string[];
   variants: {
     size: string[];
-    color: string[];
+    color?: string[];
   };
+}
+
+export interface ProductPreviewProps {
+  slug: string;
+  image: string;
+  title: string;
+  price: string;
 }

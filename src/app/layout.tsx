@@ -9,8 +9,9 @@ const geistSans = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Camiseta Masculina Casual",
-  description: "Teste Carlos Eduardo Sousa de Oliveira - MONTINK",
+  title: "Wow | Brasil",
+  description:
+    "As tendências de moda para mulher, homem e criança na ZARA online. Encontre toda a roupa online: casacos, calças, sapatos e acessórios.",
 };
 
 export default function RootLayout({

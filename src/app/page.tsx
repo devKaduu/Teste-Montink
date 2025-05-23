@@ -1,5 +1,5 @@
-import { ProductTemplate } from "@/app/template/product";
+import { HomeTemplate } from "../template/home";
 
 export default function Home() {
-  return <ProductTemplate />;
+  return <HomeTemplate />;
 }

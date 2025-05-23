@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getWithExpiry, setWithExpiry } from "@/app/utils/storage";
+import { getWithExpiry, setWithExpiry } from "@/utils/storage";
 
 export function usePersistedState<T>(key: string, initialValue: T, ttl = 15) {
   const [value, setValue] = useState<T>(initialValue);

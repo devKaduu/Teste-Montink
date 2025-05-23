@@ -1,5 +1,5 @@
-import { fetchCep } from "@/app/api/fetchCep";
-import { zipCodeMask } from "@/app/utils/zip-code-replace";
+import { fetchCep } from "@/api/fetchCep";
+import { zipCodeMask } from "@/utils/zip-code-replace";
 import { useState, useEffect } from "react";
 
 export default function ShippingField() {
