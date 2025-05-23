@@ -16,8 +16,6 @@ export function ProductTemplate() {
   const [selectedVariant, setSelectedVariant] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(products);
-
   useEffect(() => {
     const fetchProducts = async () => {
       const data = await fetchProduct();
