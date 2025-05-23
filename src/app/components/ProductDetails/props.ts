@@ -1,5 +1,5 @@
-import { Product } from "@/app/types/product";
+import { ProductApi } from "@/app/types/product";
 
 export interface ProductDetailsProps {
-  product: Omit<Product, "images" | "variants">;
+  product: Omit<ProductApi, "options" | "price" | "values">;
 }
