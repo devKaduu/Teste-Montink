@@ -32,7 +32,7 @@ export function Products() {
   ] as ProductPreviewProps[];
 
   return (
-    <section className="p-5 flex  justify-center flex-row gap-14">
+    <section className="p-5 flex justify-center flex-row gap-14">
       {products.map((product, index) => (
         <Link key={index} href={`/${product.slug}`}>
           <ProductPreview

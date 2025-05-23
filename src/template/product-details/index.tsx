@@ -8,11 +8,29 @@ import VariantSelector from "@/components/VariantSelector";
 import { usePersistedState } from "@/hook/usePersistedState";
 import { Product } from "@/types/product";
 import { Header } from "@/template/shared/header";
+import { useCart } from "@/context/CartContext";
 
-export function ProductDetailstTemplate({ product }: { product: Product }) {
+export function ProductDetailsTemplate({ product }: { product: Product }) {
   const [mainImage, setMainImage] = usePersistedState("mainImage", product.images[0]);
   const [selectedSize, setSelectedSize] = usePersistedState("selectedSize", "");
   const [selectedColor, setSelectedColor] = usePersistedState("selectedColor", product.variants.color?.[0] || "");
+
+  const { addToCart } = useCart();
+
+  function handleAddToCart() {
+    if (selectedSize) {
+      addToCart({
+        ...product,
+        title: product.title,
+        price: product.price,
+        shipping: product.shipping,
+        description: product.description,
+        images: product.images,
+      });
+    } else {
+      alert("Selecione um tamanho antes de adicionar ao carrinho.");
+    }
+  }
 
   return (
     <main>
@@ -44,7 +62,7 @@ export function ProductDetailstTemplate({ product }: { product: Product }) {
               type="text"
             />
 
-            <Button text="Comprar agora" />
+            <Button text="Comprar agora" onClick={handleAddToCart} />
           </div>
         </div>
       </div>

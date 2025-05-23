@@ -1,6 +1,10 @@
+"use client";
+import { useCart } from "@/context/CartContext";
 import Link from "next/link";
 
 export function Header() {
+  const { cart } = useCart();
+
   return (
     <header>
       <div className="flex flex-row justify-between items-center py-6 px-14 w-full">
@@ -8,7 +12,7 @@ export function Header() {
         <nav className="flex items-center gap-4">
           <Link href="/">Iniciar sessão</Link>
           <Link href="/">Ajuda</Link>
-          <Link href="/">Cesto [0]</Link>
+          <Link href="/cart">Cesto {`[${cart.length}]`}</Link>
         </nav>
       </div>
     </header>

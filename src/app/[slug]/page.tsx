@@ -1,5 +1,5 @@
 import { products } from "@/const/product";
-import { ProductDetailstTemplate } from "@/template/product-details";
+import { ProductDetailsTemplate } from "@/template/product-details";
 import { Product } from "@/types/product";
 
 type Params = {
@@ -13,5 +13,5 @@ export default async function ProductPage({ params }: Params) {
 
   if (!product) return;
 
-  return <ProductDetailstTemplate product={product} />;
+  return <ProductDetailsTemplate product={product} />;
 }
