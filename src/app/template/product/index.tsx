@@ -85,7 +85,7 @@ export function ProductTemplate() {
 
   return (
     <section className="flex justify-center items-center min-h-screen px-4 py-10">
-      <div className="flex flex-col lg:flex-row items-center lg:items-center gap-10 lg:gap-24 w-full max-w-7xl">
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:items-center gap-10 lg:gap-24 w-full max-w-7xl">
         <Image src={products.image_url} alt="Imamge do Produto" width={467} height={538} />
 
         <div className="border border-gray-300 px-6 py-8 w-full max-w-md">
