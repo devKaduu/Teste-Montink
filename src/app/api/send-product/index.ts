@@ -1,5 +1,5 @@
 import { ProductRequest } from "./request";
-import { ProductResponse } from "./response";
+import { ProductResponse } from "../fetch-product/response";
 
 export async function sendResquestProduct(body: ProductRequest[]) {
   try {

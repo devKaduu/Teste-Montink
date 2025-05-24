@@ -1,4 +1,4 @@
-import { fetchCep } from "@/app/api/fetchCep";
+import { fetchCep } from "@/app/api/fetch-cep/fetchCep";
 import { zipCodeMask } from "@/app/utils/zip-code-replace";
 import { useState, useEffect } from "react";
 

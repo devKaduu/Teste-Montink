@@ -3,13 +3,13 @@
 import { ProductDetails } from "@/app/components/ProductDetails";
 import { Button } from "@/app/components/Button";
 import ShippingField from "@/app/components/ShippingField";
-import { fetchProduct } from "@/app/api/fetchProduct";
+import { fetchProduct } from "@/app/api/fetch-product";
 import { useEffect, useState } from "react";
-import { ProductResponse } from "@/app/api/response";
+import { ProductResponse } from "@/app/api/fetch-product/response";
 import Image from "next/image";
 import { arraysAreEqual } from "@/app/utils/arrays-equal";
 import { Modal } from "@/app/components/Modal";
-import { sendResquestProduct } from "@/app/api/sendProduct";
+import { sendResquestProduct } from "@/app/api/send-product";
 
 export function ProductTemplate() {
   const [products, setProducts] = useState<ProductResponse>();
