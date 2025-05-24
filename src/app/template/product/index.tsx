@@ -15,6 +15,7 @@ export function ProductTemplate() {
   const [products, setProducts] = useState<ProductResponse>();
   const [selectedVariant, setSelectedVariant] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState({ title: "", message: "" });
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -48,6 +49,11 @@ export function ProductTemplate() {
     const matchedVariant = products?.variants.find((variant) => arraysAreEqual(variant.values, selectedVariant));
 
     if (matchedVariant && matchedVariant.inventory_quantity <= 0) {
+      setModalMessage({
+        title: "Produto sem estoque",
+        message: `Atualmente não temos no nosso estoque esse produto. Quantidade: ${matchedVariant.inventory_quantity}`,
+      });
+
       setIsOpen(true);
 
       return;
@@ -67,7 +73,12 @@ export function ProductTemplate() {
 
     await sendResquestProduct(product);
 
-    alert(`Produto Comprado -  R$:${matchedVariant?.price} ${matchedVariant?.values}`);
+    setModalMessage({
+      title: "Compra realizada",
+      message: `${matchedVariant?.id} - R$${matchedVariant?.price} - ${matchedVariant?.values.join(", ")}`,
+    });
+
+    setIsOpen(true);
   }
 
   if (!products) return;
@@ -109,7 +120,12 @@ export function ProductTemplate() {
         </div>
       </div>
 
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <Modal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title={modalMessage.title}
+        message={modalMessage.message}
+      />
     </section>
   );
 }
